@@ -10,4 +10,4 @@
 + No olvidar comentar y formatear el código correctamente. Incluyendo Javadock
 + El ejercicio se corregirá en clase, el profesor preguntará por la implicación de cada miembro del grupo, por lo que las notas no serán necesariamente las mismas.
 + Debes entregar una copia de tu proyecto, comprimiendo el proyecto de Netbeans en un archivo zip con el siguiente nombre apellido1_nombre1_apellido2_nombre2_proyecto2.zip
-+ 
++ d
