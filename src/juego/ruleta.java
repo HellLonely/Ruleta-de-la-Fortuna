@@ -1,4 +1,4 @@
-package SRC;
+package juego;
 
 public class ruleta{
 
