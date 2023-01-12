@@ -9,15 +9,21 @@ public class desings {
         System.out.println("         |    |   \\  |  /  |_\\  ___/|  |  / __ \\_ / /_/ \\  ___/  |  |__/ __ \\_  /        \\  |  /\\  ___/|  | \\/|  | \\  ___/ ");
         System.out.println("         |____|_  /____/|____/\\___  >__| (____  / \\____ |\\___  > |____(____  / /_______  /____/  \\___  >__|   |__|  \\___  >");
         System.out.println("                \\/                \\/          \\/       \\/    \\/            \\/          \\/            \\/                 \\/ \n");
-        System.out.println("▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀");
+        System.out.println("▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ \n");
     }
 
-    public static void selectorNombre(){
-        System.out.println("selecciona nombre");
+    public static void selectorNombre(byte numJugadores){
+        System.out.println("╔══════════════════════════════════════╗");
+        System.out.println("║ Escribe el nombre de los "+numJugadores+" jugadores ║");
+        System.out.println("╚══════════════════════════════════════╝");
     }
     
     public static void selectorJugadores(){
-        System.out.println("selecciona el número de jugadores");
+        System.out.println("╔═════════════════════╗");
+        System.out.println("║ Numero de jugadores ║");
+        System.out.println("╚═════════════════════╝");
+        System.out.print("$ -> ");
     }
+    
 }
 
