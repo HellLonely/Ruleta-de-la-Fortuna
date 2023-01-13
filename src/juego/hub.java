@@ -61,6 +61,7 @@ public class hub {
             System.out.println("Nombre "+arrayJugadores[i].getNombre());
         }
 
+       
 
     }
 }
