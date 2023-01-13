@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class hub {
     public static void main(String[] args) {
         String nombre;
-        desings.start();
+        desings.panelExample();
+        desings.start2();
         Scanner input = new Scanner(System.in);
         desings.selectorJugadores();
         byte numJugadores = input.nextByte();
@@ -60,9 +61,6 @@ public class hub {
         for (int i = 0; i<arrayJugadores.length; i++){
             System.out.println("Nombre "+arrayJugadores[i].getNombre());
         }
-
-       
-
     }
 }
 
