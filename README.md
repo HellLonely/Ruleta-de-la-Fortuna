@@ -3,7 +3,7 @@
 ### Integrantes:
 + Ricardo Vega Alonso
 
-+ Yeison González Rascado
++ Yeison González Rascado (HellLonely)
 
 ## Consideraciones Generales
 + El correcto diseño orientado a objetos del proyecto es importante y formará parte de la nota. El patrón MVC (Modelo-Vista-Controlador) debe respetarse tanto como sea posible, para facilitar futuras mejoras.
@@ -29,3 +29,17 @@ for (int i=0; i<arrayJugadores.length; i++){
 }
 ```
 
+### Turnos
+
+Por ahora tratamos los turnos con una variable auxiliar, en un futuro se debera cambiar.
+
+``` java
+while(turno < 1){
+    for(int i = 0; i < arrayJugadores.length; i++){
+        desings.separador();
+        System.out.println("Turno de "+arrayJugadores[i].getNombre());       
+    }
+    System.out.println("    ");
+    turno++;
+}
+```
