@@ -3,7 +3,7 @@ package juego;
 public class desings {
     public static void start2(){
         String arrayText[] = new String[7];
-        arrayText[0] = "▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ \n";
+        arrayText[0] = "▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ \n";
         arrayText[1] = "        __________      .__          __               .___       .__             _________                     __          ";
         arrayText[2] = "        \\______   \\__ __|  |   _____/  |______      __| _/____   |  | _____     /   _____/__ __   ____________/  |_  ____  ";
         arrayText[3] = "         |       _/  |  \\  | _/ __ \\   __\\__  \\    / __ |/ __ \\  |  | \\__  \\    \\_____  \\|  |  \\_/ __ \\_  __ \\   __\\/ __ \\ ";
@@ -41,7 +41,7 @@ public class desings {
         /*
          * large1 es una variable que define el largo de la palabra, a palabra.lenght hay que sumarle 1 siempre
          */
-        int large1 = 4;
+        int large1 = 8;
 
         for (int i = 0; i < panelVision.length; i++) {
             for (int j = 0; j < panelVision[i].length; j++) {
@@ -56,7 +56,13 @@ public class desings {
             }
             System.out.println(" ");
         }
+    }
 
+    public static void pista(){
+        System.out.println("╔═════════════════════╗");
+        System.out.println("║  Comienza el juego  ║");
+        System.out.println("╚═════════════════════╝");
+        System.out.println("Pista -> " + Frases.generarPista());
 
     }
 }
