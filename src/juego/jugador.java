@@ -22,6 +22,11 @@ public class jugador {
     public static void comprarVocal(String letra, int dineroJugador){
         Scanner input = new Scanner(System.in);
         letra=input.next("[^aeiou]");
+        if(dineroJugador>=100){
+        dineroJugador=dineroJugador-100;
+        }else{
+            System.out.println("No tienes dinero suficiente para comprar");
+        }
 
     }
 
