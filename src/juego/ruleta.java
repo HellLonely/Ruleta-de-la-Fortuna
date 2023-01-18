@@ -4,7 +4,7 @@ public class ruleta{
 
     private int cantidadDinero;
 
-    public static void giro(int cantidadDinero){
+    public int giro(){
         int generador = new java.util.Random().nextInt(24);
         switch (generador) {
             case 0,1,2,3,4:
@@ -41,6 +41,7 @@ public class ruleta{
             default:
                 throw new AssertionError();
         }
+        return cantidadDinero;
 
     }
 
