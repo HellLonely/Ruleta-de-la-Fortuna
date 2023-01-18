@@ -10,6 +10,12 @@ public class hub {
         desings.selectorJugadores();
         byte numJugadores = input.nextByte();
 
+        int turno = 0; /* Variable auxiliar */
+
+        /*
+         * Se nombran a los jugadores mediante un array de jugadores
+        */
+
         desings.selectorNombre(numJugadores);
         jugador arrayJugadores[] = new jugador[numJugadores];
         
@@ -19,11 +25,21 @@ public class hub {
             arrayJugadores[i] = new jugador(nombre, 0); 
         }
 
-        for (int i = 0; i<arrayJugadores.length; i++){
-            System.out.println("Nombre "+arrayJugadores[i].getNombre());
-        }
+        /*
+         * Sistema de turnos, funciona con un bucle. Hasta que el panel este resuelto 
+        */
 
         desings.pista();
+        while(turno < 1){
+            for(int i = 0; i < arrayJugadores.length; i++){
+                desings.separador();
+                System.out.println("Turno de "+arrayJugadores[i].getNombre());
+
+                
+            }
+            System.out.println("    ");
+            turno++;
+        }
         
     }
 }
