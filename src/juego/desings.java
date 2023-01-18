@@ -65,4 +65,8 @@ public class desings {
         System.out.println("Pista -> " + Frases.generarPista());
 
     }
+
+    public static void separador(){
+        System.out.println("\n -_-_-_-_-_-_-_-_-_-_-_- \n");
+    }
 }
