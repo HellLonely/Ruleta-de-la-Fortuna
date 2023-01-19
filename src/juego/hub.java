@@ -28,14 +28,13 @@ public class hub {
         /*
          * Sistema de turnos, funciona con un bucle. Hasta que el panel este resuelto 
         */
+        FrasesLogic.soutFrase();
 
         desings.pista();
         while(turno < 1){
             for(int i = 0; i < arrayJugadores.length; i++){
                 desings.separador();
                 System.out.println("Turno de "+arrayJugadores[i].getNombre());
-
-                
             }
             System.out.println("    ");
             turno++;
