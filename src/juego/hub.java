@@ -28,7 +28,9 @@ public class hub {
         /*
          * Sistema de turnos, funciona con un bucle. Hasta que el panel este resuelto 
         */
-        FrasesLogic.soutFrase();
+        /*FrasesLogic.soutFrase();*/
+
+        desings.panelExample();
 
         desings.pista();
         while(turno < 1){

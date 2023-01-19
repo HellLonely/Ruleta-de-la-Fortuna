@@ -2,6 +2,10 @@ package juego;
 
 import java.util.Scanner;
 
+/**
+*
+ */
+
 public class jugador {
     private String nombre;
     private int dineroJugador;

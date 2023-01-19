@@ -48,7 +48,14 @@ public class desings {
                 if (i == 0 || i == panelVision.length-1){
                     System.out.print(panelVision[i][j] = "═");
                 }else if ( i == 1 && j >0 && j < large1){
-                    System.out.print(panelVision[i][j] = "_");
+                    String Phrase = Frases.generarFrase();
+                    String PhraseArray[] = Phrase.split(" ");
+                    for (int k = 0; k < PhraseArray.length; k++){
+                        for (int l = 0; l < PhraseArray[k].length();l++){
+                            System.out.print(PhraseArray[k].charAt(l));
+                        }
+                        System.out.println("    ");
+                    }
                 }
                 else {
                     System.out.print(panelVision[i][j] = "■"); 
