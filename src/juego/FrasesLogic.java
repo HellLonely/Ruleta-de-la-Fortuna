@@ -1,6 +1,5 @@
 package juego;
 
-import java.lang.ref.PhantomReference;
 
 public class FrasesLogic {
 

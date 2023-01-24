@@ -65,6 +65,29 @@ public class desings {
         }
     }
 
+    public static void panelExample2(){
+        String panelHidden [][] = new String[3][1];
+        String Phrase = Frases.generarFrase();
+
+        char [] aPhrase = Phrase.toCharArray();
+
+        for (int i = 0; i <panelHidden.length; i++){
+            if (i == 0 || i == 2){
+                separador2();
+            }
+            else {
+                for (int j = 0; j < aPhrase.length; j++){
+
+                    if (aPhrase[j] == ' '){
+                        System.out.print("_");
+                    }else{
+                        System.out.print(aPhrase[j]);
+                    }
+                }
+            }
+        }
+    }
+
     public static void pista(){
         System.out.println("╔═════════════════════╗");
         System.out.println("║  Comienza el juego  ║");
@@ -75,5 +98,8 @@ public class desings {
 
     public static void separador(){
         System.out.println("\n -_-_-_-_-_-_-_-_-_-_-_- \n");
+    }
+    public static void separador2(){
+        System.out.println("\n |---------------------------------------| \n");
     }
 }

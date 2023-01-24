@@ -6,6 +6,7 @@ public class hub {
     public static void main(String[] args) {
         String nombre;
         desings.start2();
+        desings.panelExample2();
         Scanner input = new Scanner(System.in);
         desings.selectorJugadores();
         byte numJugadores = input.nextByte();
@@ -30,7 +31,7 @@ public class hub {
         */
         /*FrasesLogic.soutFrase();*/
 
-        desings.panelExample();
+        
 
         desings.pista();
         while(turno < 1){
