@@ -22,9 +22,9 @@ public class desings {
         }
     }
 
-    public static void selectorNombre(byte numJugadores){
+    public static void selectorNombre(){
         System.out.println("╔══════════════════════════════════════╗");
-        System.out.println("║ Escribe el nombre de los "+numJugadores+" jugadores ║");
+        System.out.println("║ Escribe el nombre de los jugadores   ║");
         System.out.println("╚══════════════════════════════════════╝");
     }
     
@@ -96,10 +96,15 @@ public class desings {
 
     }
 
+    public static void tiradaRuleta(String usuario){
+        System.out.println("Le toca tirar de la ruleta a  " + usuario);
+        System.out.println("    ");
+    }
+
     public static void separador(){
         System.out.println("\n -_-_-_-_-_-_-_-_-_-_-_- \n");
     }
     public static void separador2(){
-        System.out.println("\n |---------------------------------------| \n");
+        System.out.println("\n|---------------------------------------|");
     }
 }
