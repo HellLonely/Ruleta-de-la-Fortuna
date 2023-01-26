@@ -8,6 +8,9 @@ public class ruleta{
 
     public static int giro(){
         int generador = new java.util.Random().nextInt(24);
+        /**
+        *Se genera un número aleatorio comprendido del 0 al 23
+        */
         switch (generador) {
             case 0,1,2,3,4:
                 selector[0]=50;
@@ -53,6 +56,10 @@ public class ruleta{
             default:
                 throw new AssertionError();
         }
+        /**
+        *El selector 0 indica el dinero, es decir 100, 50,200 o 150
+        *El selector 1 indica casillas especiales, 1="Comodín", 2="P. turno", 3="1/2", 4="x2", 5="Quiebra"
+         */
         return selector[0&1];
 
     }

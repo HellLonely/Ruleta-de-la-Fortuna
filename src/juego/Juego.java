@@ -1,14 +1,17 @@
 package juego;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Juego {
     static jugador[] arrayJugadores;
     private static String nome;
     private static Scanner input = new Scanner(System.in);
+    private static char[] panel;
+
+
 
     public static void Comenzar(){
-        advinarletra();
         desings.selectorJugadores();
         byte numJugadores = input.nextByte();
         arrayJugadores = new jugador[numJugadores];
@@ -23,8 +26,11 @@ public class Juego {
 
     public static void Turnos(){
         int turno = 0;
+        System.out.println(Frases.generarFrase());
+        System.out.println(Frases.generarPista());
+
         
-        while(turno < 10){
+        while(turno < 1){
             System.out.println("Jugadores: "+arrayJugadores.length);
             for(int i = 0; i < arrayJugadores.length; i++){
                 desings.separador();
@@ -40,6 +46,17 @@ public class Juego {
         }
     }
 
+    public static void generarPanel(){
+        String frase = Frases.generarFrase();
+        char[] c;
+        c  = frase.toCharArray();
+
+        for (int i = 0; i < c.length;i++) {
+            System.out.print(c[i]);
+        }
+    }
+
+
     public static void advinarletra(){
         /*String letra = input.next();*/
         /*char text = letra.charAt(0);*/
@@ -51,5 +68,9 @@ public class Juego {
         for (int i = 0; i < c.length;i++) {
             System.out.print(c[i]);
         }
+    }
+
+    public static void panelInicial(){
+
     }
 }
