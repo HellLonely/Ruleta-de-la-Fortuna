@@ -1,7 +1,10 @@
 package juego;
 
+import java.util.ArrayList;
+
 public class prueba {
-    static String[][] frdase = new String[11][2];
+
+    ArrayList<ArrayList<Integer>> graph = new ArrayList<>();
     
     public static void rellenararray(){
 
@@ -10,9 +13,10 @@ public class prueba {
         chara  = frase.toCharArray();
         System.out.println(chara[1]);
 
-        for (int i = 0; i < frdase.length; i++){
+        for (int i = 0; i < frase.length; i++){
             String str = Character.toString(chara[i]);
-            frdase[i] = str;
+            frase[i] = str;
         }
+        
     }
 }

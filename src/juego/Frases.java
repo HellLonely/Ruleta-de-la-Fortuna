@@ -1,6 +1,7 @@
 package juego;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Frases {
     private static String pista;
@@ -10,8 +11,9 @@ public class Frases {
     static ArrayList listaFrases = new ArrayList<String>();
     static ArrayList listaPistas = new ArrayList<String>();
 
-    public static void random(){
+    public static int random(){
         generador = new java.util.Random().nextInt(8);
+        return generador;
     }
     
     public static void insertArrayListFrase(){
@@ -38,7 +40,12 @@ public class Frases {
 
 
     public static String generarFrase() {
-        random();
+        /*
+         ! Se necesita generar siempre la frase para poder obtener la Pista
+        */
+
+
+        generador = random();
         insertArrayListFrase();
         String frase = (String) listaFrases.get(generador);
         return frase;
@@ -46,8 +53,11 @@ public class Frases {
 
     public static String generarPista() {
         insertArrayListPista();
-        String frase = (String) listaPistas.get(generador);
-        return frase;
+        String pista = (String) listaPistas.get(generador);
+        return pista;
     }
     
+   /*  public static borrarPista() {
+        listaFrases.remove(generador);
+    }*/
 }

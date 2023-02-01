@@ -59,7 +59,7 @@ public class ruleta{
         /**
         *El selector 0 indica el dinero, es decir 100, 50,200 o 150
         *El selector 1 indica casillas especiales, 1="Comodín", 2="P. turno", 3="1/2", 4="x2", 5="Quiebra"
-         */
+        */
         return selector[0&1];
 
     }

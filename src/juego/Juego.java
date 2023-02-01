@@ -10,7 +10,6 @@ public class Juego {
     private static char[] panel;
 
 
-
     public static void Comenzar(){
         desings.selectorJugadores();
         byte numJugadores = input.nextByte();
@@ -26,20 +25,30 @@ public class Juego {
 
     public static void Turnos(){
         int turno = 0;
+
+        /*
+         * ↓ Genera la Pista y la frase ↓
+        */
+
+        /* System.out.println(Frases.generarFrase());*/
         System.out.println(Frases.generarFrase());
-        System.out.println(Frases.generarPista());
+        System.out.println("\nLa pista del panel es: " + Frases.generarPista());
 
         
         while(turno < 1){
             System.out.println("Jugadores: "+arrayJugadores.length);
             for(int i = 0; i < arrayJugadores.length; i++){
                 desings.separador();
+                System.out.println("Turno de: "+arrayJugadores[i].getNombre());
+
+                
+
                 nome = arrayJugadores[i].getNombre();
                 int money = ruleta.giro();
                 System.out.println("Output: " + money);
                 arrayJugadores[i].añadirDinero(money);
                 System.out.println(arrayJugadores[i].getDinero());
-                System.out.println(arrayJugadores[i].getNombre());
+                
             }
             System.out.println("    ");
             turno++;
@@ -55,7 +64,6 @@ public class Juego {
             System.out.print(c[i]);
         }
     }
-
 
     public static void advinarletra(){
         /*String letra = input.next();*/

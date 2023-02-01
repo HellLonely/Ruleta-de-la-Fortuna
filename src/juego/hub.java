@@ -8,11 +8,8 @@ public class hub {
         desings.start2();
         Scanner input = new Scanner(System.in);
 
-        
         Juego.Comenzar();
-
         Juego.Turnos();
-        
     }
 }
 
