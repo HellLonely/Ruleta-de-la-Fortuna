@@ -57,7 +57,8 @@ public class Frases {
         return pista;
     }
     
-   /*  public static borrarPista() {
+   public void borrarPanel() {
         listaFrases.remove(generador);
-    }*/
+        listaPistas.remove(generador);
+    }
 }
