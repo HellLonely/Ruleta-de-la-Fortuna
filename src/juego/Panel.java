@@ -1,15 +1,45 @@
 package juego;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
-public class Frases {
+public class Panel {
+    static String panelJugadorAdivinar;
+    static String PistaJugador;
+
+    static ArrayList listaFrases = new ArrayList<String>();
+    static ArrayList listaPistas = new ArrayList<String>();
+    
     private static String pista;
     private static String frase;
     static int generador;
 
-    static ArrayList listaFrases = new ArrayList<String>();
-    static ArrayList listaPistas = new ArrayList<String>();
+    static void IniciarPanelJuego(){
+        panelJugadorAdivinar = generarFrase();
+        PistaJugador =  generarPista();
+        System.out.println("Pista del panel: " + PistaJugador);
+    }
+
+
+
+
+    public static void comprobarLetraJugador(char LetraEnviadaJugador){
+
+        System.out.println(panelJugadorAdivinar);
+
+       int lenghtPanelJugador = panelJugadorAdivinar.length();
+
+        
+        char[] characterStringConvert;
+        characterStringConvert  = panelJugadorAdivinar.toCharArray();
+
+        for (int i = 0; i < lenghtPanelJugador; i++){
+            if(characterStringConvert[i] == LetraEnviadaJugador){
+                System.out.println("Bien funciona");
+            }
+        }
+        
+        /*String[][] panelParaMostrar= new String [lenghtPanelJugador][2];*/
+    }
 
     public static int random(){
         generador = new java.util.Random().nextInt(8);
@@ -51,10 +81,10 @@ public class Frases {
         return frase;
     }
 
-    public static String generarPista() {
+    public static String generarPista(){
         insertArrayListPista();
-        String pista = (String) listaPistas.get(generador);
-        return pista;
+        String PistaJugador = (String) listaPistas.get(generador);
+        return PistaJugador;
     }
     
    public void borrarPanel() {

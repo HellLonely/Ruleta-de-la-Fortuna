@@ -23,6 +23,7 @@ public class Juego {
     }
 
 
+
     public static void Turnos(){
         int turno = 0;
 
@@ -31,17 +32,27 @@ public class Juego {
         */
 
         /* System.out.println(Frases.generarFrase());*/
-        System.out.println(Frases.generarFrase());
-        System.out.println("\nLa pista del panel es: " + Frases.generarPista());
+
+
+        Panel.IniciarPanelJuego();
+
 
         
         while(turno < 1){
-            System.out.println("Jugadores: "+arrayJugadores.length);
+            /*System.out.println("Jugadores: "+arrayJugadores.length); */
             for(int i = 0; i < arrayJugadores.length; i++){
                 desings.separador();
                 System.out.println("Turno de: "+arrayJugadores[i].getNombre());
 
-                
+
+                System.out.println("Introduce una letra: ");
+                char letraIntroducidaJugador ;
+                letraIntroducidaJugador = input.next().charAt(0);  
+
+                Panel.comprobarLetraJugador(letraIntroducidaJugador);
+
+
+                System.out.println(letraIntroducidaJugador);
 
                 nome = arrayJugadores[i].getNombre();
                 int money = ruleta.giro();
@@ -55,7 +66,7 @@ public class Juego {
         }
     }
 
-    public static void generarPanel(){
+    /*public static void generarPanel(){
         String frase = Frases.generarFrase();
         char[] c;
         c  = frase.toCharArray();
@@ -65,20 +76,22 @@ public class Juego {
         }
     }
 
-    public static void advinarletra(){
+    /*public static void advinarletra(){
         /*String letra = input.next();*/
         /*char text = letra.charAt(0);*/
 
-        String frase = Frases.generarFrase();
+       /*  String frase = Frases.generarFrase();
         char[] c;
         c  = frase.toCharArray();
 
         for (int i = 0; i < c.length;i++) {
             System.out.print(c[i]);
         }
-    }
+    }*/
+
+
 
     public static void panelInicial(){
-
     }
+
 }

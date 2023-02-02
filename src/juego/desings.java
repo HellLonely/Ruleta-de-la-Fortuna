@@ -35,7 +35,7 @@ public class desings {
         System.out.print("$ -> ");
     }
 
-    public static void panelExample(){
+    /*public static void panelExample(){
         String panelVision[][] = new String[5][10];
 
         /*
@@ -43,7 +43,7 @@ public class desings {
          */
         int large1 = 8;
 
-        for (int i = 0; i < panelVision.length; i++) {
+       /* for (int i = 0; i < panelVision.length; i++) {
             for (int j = 0; j < panelVision[i].length; j++) {
                 if (i == 0 || i == panelVision.length-1){
                     System.out.print(panelVision[i][j] = "═");
@@ -63,9 +63,9 @@ public class desings {
             }
             System.out.println(" ");
         }
-    }
+    }*/
 
-    public static void panelExample2(){
+    /*public static void panelExample2(){
         String panelHidden [][] = new String[3][1];
         String Phrase = Frases.generarFrase();
 
@@ -86,13 +86,12 @@ public class desings {
                 }
             }
         }
-    }
+    }*/
 
     public static void pista(){
         System.out.println("╔═════════════════════╗");
         System.out.println("║  Comienza el juego  ║");
         System.out.println("╚═════════════════════╝");
-        System.out.println("Pista -> " + Frases.generarPista());
 
     }
 
@@ -106,5 +105,17 @@ public class desings {
     }
     public static void separador2(){
         System.out.println("\n|---------------------------------------|");
+    }
+
+    public static void decirLetras(){
+        System.out.println("╔════════════════════╗");
+        System.out.println("║    Adivina letra   ║");
+        System.out.println("╚════════════════════╝");
+    }
+
+    public static void comprarVocales(){
+        System.out.println("╔════════════════════╗");
+        System.out.println("║   Compra vocales   ║");
+        System.out.println("╚════════════════════╝");
     }
 }

@@ -18,6 +18,7 @@ public class jugador {
 
     public static void adivinarLetra(String letra){
         Scanner input = new Scanner(System.in);
+        desings.decirLetras();
         letra=input.next("[^aeiou]");
         System.out.print(letra);
     }
@@ -25,7 +26,8 @@ public class jugador {
 
     public static void comprarVocal(String letra, int dineroJugador){
         Scanner input = new Scanner(System.in);
-        letra=input.next("[^aeiou]");
+        desings.comprarVocales();
+        letra=input.next("[a|e|i|o|u]");
         if(dineroJugador>=100){
         dineroJugador=dineroJugador-100;
         }else{

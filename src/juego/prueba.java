@@ -17,6 +17,6 @@ public class prueba {
             String str = Character.toString(chara[i]);
             frase[i] = str;
         }
-        
+
     }
 }
