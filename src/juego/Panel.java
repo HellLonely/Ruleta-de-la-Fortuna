@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Panel {
     static String panelJugadorAdivinar;
     static String PistaJugador;
+    static int aciertosJugador = 0;
 
     static ArrayList listaFrases = new ArrayList<String>();
     static ArrayList listaPistas = new ArrayList<String>();
@@ -12,6 +13,7 @@ public class Panel {
     private static String pista;
     private static String frase;
     static int generador;
+    public static char[] extraerNumeroAciertos;
 
     static void IniciarPanelJuego(){
         panelJugadorAdivinar = generarFrase();
@@ -24,9 +26,10 @@ public class Panel {
 
     public static void comprobarLetraJugador(char LetraEnviadaJugador){
 
-        System.out.println(panelJugadorAdivinar);
+        /*System.out.println(panelJugadorAdivinar);*/
 
-       int lenghtPanelJugador = panelJugadorAdivinar.length();
+
+        int lenghtPanelJugador = panelJugadorAdivinar.length();
 
         
         char[] characterStringConvert;
@@ -34,12 +37,25 @@ public class Panel {
 
         for (int i = 0; i < lenghtPanelJugador; i++){
             if(characterStringConvert[i] == LetraEnviadaJugador){
-                System.out.println("Bien funciona");
+                aciertosJugador++;
+                char characterAcertadoJugador = characterStringConvert[i];
             }
         }
+
+        System.out.println("\nEn el panel hay "+ aciertosJugador + " letras");
         
         /*String[][] panelParaMostrar= new String [lenghtPanelJugador][2];*/
     }
+
+
+    public static int extraerNumeroAciertos(){
+        return aciertosJugador;
+    }
+
+    public static void resetCacheAciertos(){
+        aciertosJugador = 0;
+    }
+
 
     public static int random(){
         generador = new java.util.Random().nextInt(8);
@@ -59,7 +75,7 @@ public class Panel {
 
     public static void insertArrayListPista(){
         listaPistas.add("Pincho de bar");
-        listaPistas.add("Plato asado");
+        listaPistas.add("Plato asado"); /*No fallo*/
         listaPistas.add("Bebida fría");
         listaPistas.add("3 asiáticos");
         listaPistas.add("Presentador español");

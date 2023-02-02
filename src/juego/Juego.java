@@ -8,6 +8,7 @@ public class Juego {
     private static String nome;
     private static Scanner input = new Scanner(System.in);
     private static char[] panel;
+    static ArrayList listaLetrasProhibidas = new ArrayList<String>();
 
 
     public static void Comenzar(){
@@ -27,10 +28,6 @@ public class Juego {
     public static void Turnos(){
         int turno = 0;
 
-        /*
-         * ↓ Genera la Pista y la frase ↓
-        */
-
         /* System.out.println(Frases.generarFrase());*/
 
 
@@ -45,20 +42,33 @@ public class Juego {
                 System.out.println("Turno de: "+arrayJugadores[i].getNombre());
 
 
+                nome = arrayJugadores[i].getNombre();
+                System.out.println("\n"+nome + " a tirado de la ruleta.\n");
+                int money = ruleta.giro();
+
                 System.out.println("Introduce una letra: ");
                 char letraIntroducidaJugador ;
                 letraIntroducidaJugador = input.next().charAt(0);  
 
                 Panel.comprobarLetraJugador(letraIntroducidaJugador);
 
+                
 
-                System.out.println(letraIntroducidaJugador);
+                /**
+                * ↓ Añadir dinero ↓
+                */
 
-                nome = arrayJugadores[i].getNombre();
-                int money = ruleta.giro();
-                System.out.println("Output: " + money);
-                arrayJugadores[i].añadirDinero(money);
-                System.out.println(arrayJugadores[i].getDinero());
+                int numeroAciertosJugador = Panel.extraerNumeroAciertos();
+
+
+                for(int j = 0; j<numeroAciertosJugador; j++){
+                    arrayJugadores[i].añadirDinero(money);
+                }
+                Panel.resetCacheAciertos();
+
+                
+
+                System.out.println("\nTotal de dinero: "+arrayJugadores[i].getDinero());
                 
             }
             System.out.println("    ");
