@@ -48,6 +48,8 @@ public class Panel {
     }
 
 
+    
+
     public static int extraerNumeroAciertos(){
         return aciertosJugador;
     }

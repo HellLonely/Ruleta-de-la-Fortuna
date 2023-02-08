@@ -2,7 +2,7 @@ package juego;
 
 import java.util.Scanner;
 
-public class jugador {
+public class jugador{
     private String nombre;
     private int dineroJugador;
     private int numComodines;
@@ -15,15 +15,6 @@ public class jugador {
         byte numComodines = 0;
     }
 
-
-    public static void adivinarLetra(String letra){
-        Scanner input = new Scanner(System.in);
-        desings.decirLetras();
-        letra=input.next("[^aeiou]");
-        System.out.print(letra);
-    }
-
-
     public static void comprarVocal(String letra, int dineroJugador){
         Scanner input = new Scanner(System.in);
         desings.comprarVocales();
@@ -35,6 +26,7 @@ public class jugador {
         }
 
     }
+
 
 
     public static void usarComodin(byte numComodines){
@@ -70,5 +62,9 @@ public class jugador {
 
     public int getComodin() {
         return numComodines;
+    }
+
+    public void setDinero(int dineroJugador){
+        this.dineroJugador = dineroJugador;
     }
 }
