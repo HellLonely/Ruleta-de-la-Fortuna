@@ -43,7 +43,11 @@ public class Panel {
         }
 
         System.out.println("\nEn el panel hay "+ aciertosJugador + " letras");
-        
+        if (aciertosJugador==0){
+            boolean pasarTurno = true;
+        }else{
+            boolean pasarTurno = false;
+        }
         /*String[][] panelParaMostrar= new String [lenghtPanelJugador][2];*/
     }
 
