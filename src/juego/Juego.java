@@ -37,7 +37,6 @@ public class Juego {
 
         Panel.IniciarPanelJuego();
 
-
         int money;
         while(turno < 1){
             /*System.out.println("Jugadores: "+arrayJugadores.length); */
@@ -70,14 +69,12 @@ public class Juego {
                             System.out.println("\nLa letra no puede ser una vocal");
                         } else{
 
-                            Panel.comprobarLetraJugador(letraIntroducidaJugador);
-
-                            if (){
-
-                            } 
-                            
+                            Panel.comprobarLetraJugador(letraIntroducidaJugador); 
                             int numeroAciertosJugador = Panel.extraerNumeroAciertos();
-
+                            
+                            if (numeroAciertosJugador==0){
+                                siguienteTurno= true;
+                            }
 
                             for(int j = 0; j<numeroAciertosJugador; j++){
                                 arrayJugadores[i].añadirDinero(money);
@@ -125,20 +122,13 @@ public class Juego {
 
                 }
                
-            
-                /**
-                * ↓ Añadir dinero ↓
-                */
-
-                arrayJugadores[i].setDinero(money);
-                System.out.println("\nTotal de dinero: "+arrayJugadores[i].getDinero());
                 
             }
             System.out.println("    ");
             turno++;
         }
+        }
     }
-
     /*public static void generarPanel(){
         String frase = Frases.generarFrase();
         char[] c;
