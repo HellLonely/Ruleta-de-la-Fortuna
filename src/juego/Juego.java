@@ -26,15 +26,15 @@ public class Juego {
 
 
     public static void Turnos(){
-        int turno = 0;
+        int partidas = 0;
 
         /* System.out.println(Frases.generarFrase());*/
 
 
         Panel.IniciarPanelJuego();
 
-        int money;
-        while(turno < 1){
+        int money = 0;
+        while(partidas < 1){
             /*System.out.println("Jugadores: "+arrayJugadores.length); */
             for(int i = 0; i < arrayJugadores.length; i++){
                 boolean siguienteTurno = false;
@@ -51,8 +51,38 @@ public class Juego {
 
                     nome = arrayJugadores[i].getNombre();
                     System.out.println("\n"+nome + " a tirado de la ruleta.\n");
-                    money = ruleta.giro();
 
+                    int ruletaOutput;
+                    
+
+                    ruletaOutput = ruleta.giro();
+
+                    switch (ruletaOutput){
+                        case 1:
+                        
+                        
+
+                        break;
+                        case 2:
+                        
+                        System.out.print("¡Oh no! Has caido en pierde turno");
+                        
+                        break;
+                        case 3:
+                        
+                        break;
+                        case 4:
+                        
+                        break;
+                        case 5:
+
+                        break;
+                        default:
+                            money = ruletaOutput;
+
+                        break;
+
+                    }
                     /* Decir letra  */
 
                     char letraIntroducidaJugador ;
@@ -73,7 +103,9 @@ public class Juego {
                             }
 
                             for(int j = 0; j<numeroAciertosJugador; j++){
+                        
                                 arrayJugadores[i].añadirDinero(money);
+                                
                             }
                             Panel.resetCacheAciertos();
 
@@ -98,7 +130,7 @@ public class Juego {
                         while (verificacionVocal == false) {
                             /*"[^aeiou]" */
                             letraIntroducidaJugador = input.next().charAt(0); 
-                            if (letraIntroducidaJugador == ('a') || letraIntroducidaJugador == ('e') || letraIntroducidaJugador == 'i' || letraIntroducidaJugador == 'o' || letraIntroducidaJugador == 'u'){
+                            if (letraIntroducidaJugador == 'a' || letraIntroducidaJugador == 'e' || letraIntroducidaJugador == 'i' || letraIntroducidaJugador == 'o' || letraIntroducidaJugador == 'u'){
                                 
                                 Panel.comprobarLetraJugador(letraIntroducidaJugador);  
                                 verificacionVocal = true;
@@ -121,7 +153,7 @@ public class Juego {
                 
             }
             System.out.println("    ");
-            turno++;
+            partidas++;
         }
     }
 }
