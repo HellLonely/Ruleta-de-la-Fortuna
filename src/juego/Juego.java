@@ -2,10 +2,6 @@ package juego;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import javax.print.event.PrintEvent;
 
 public class Juego {
     static jugador[] arrayJugadores;
@@ -127,8 +123,8 @@ public class Juego {
             System.out.println("    ");
             turno++;
         }
-        }
     }
+}
     /*public static void generarPanel(){
         String frase = Frases.generarFrase();
         char[] c;
@@ -163,3 +159,4 @@ public class Juego {
             jugador.comprarVocal(decidirComprarVocal, dineroJugador);
         }
     } */ 
+    
