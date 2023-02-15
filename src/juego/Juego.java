@@ -51,7 +51,6 @@ public class Juego {
 
                     nome = arrayJugadores[i].getNombre();
                     System.out.println("\n"+nome + " a tirado de la ruleta.\n");
-
                     int ruletaOutput;
                     
 
@@ -103,7 +102,7 @@ public class Juego {
                             }
 
                             for(int j = 0; j<numeroAciertosJugador; j++){
-                        
+                                
                                 arrayJugadores[i].añadirDinero(money);
                                 
                             }
