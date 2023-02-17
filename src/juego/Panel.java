@@ -11,6 +11,8 @@ public class Panel {
 
     static ArrayList listaFrases = new ArrayList<String>();
     static ArrayList listaPistas = new ArrayList<String>();
+
+    static ArrayList panelMuestraJugador = new ArrayList<Character>();
     
     private static String pista;
     private static String frase;
@@ -20,7 +22,10 @@ public class Panel {
     static void IniciarPanelJuego(){
         panelJugadorAdivinar = generarFrase();
         PistaJugador =  generarPista();
-        System.out.println("Pista del panel: " + PistaJugador);
+        System.out.println("    ");
+        System.out.println("|======== Pista ========|");
+        System.out.println("\n\n    " + PistaJugador + "\n\n");
+        System.out.println("|=======================|");
     }
 
 
@@ -96,7 +101,7 @@ public class Panel {
 
         generador = random();
         insertArrayListFrase();
-        String frase = (String) listaFrases.get(generador);
+        frase = (String) listaFrases.get(generador);
         return frase;
     }
 
@@ -121,5 +126,21 @@ public class Panel {
             System.out.println("No has acertado, lo siento");
         }
         return comprobacionIntentoResolucion;
+    }
+
+    public static void generarArrayListFrase(){
+        char[] characterPanel;
+        characterPanel = frase.toCharArray();
+
+        for (int i = 0; i < frase.length(); i++){
+            panelMuestraJugador.add(characterPanel[i]);
+        }
+    }
+
+
+    public static void mostrarPanel(){
+        for (int i = 0; i < frase.length(); i++){
+            System.out.println(panelMuestraJugador.get(i));
+        }
     }
 }

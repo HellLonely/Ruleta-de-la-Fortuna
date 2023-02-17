@@ -13,9 +13,13 @@ public class Juego {
 
     public static void Comenzar(){
         desings.selectorJugadores();
+
         byte numJugadores = input.nextByte();
+
         arrayJugadores = new jugador[numJugadores];
+
         desings.selectorNombre();
+
         for (int i=0; i<arrayJugadores.length; i++){
             System.out.print("Player "+i+" -> ");
             nome = input.next();
@@ -40,13 +44,20 @@ public class Juego {
             money = 0;
 
             for(int i = 0; i < arrayJugadores.length; i++){
+
                 boolean siguienteTurno = false;
+
                 desings.separador();
+
                 System.out.println("Turno de: "+arrayJugadores[i].getNombre());
+
+                System.out.println("Frase -----");
+                Panel.generarArrayListFrase();
+                Panel.mostrarPanel();
+                System.out.println("");
                 
                 boolean verificacionLetra = false;
                 
-
                 while(siguienteTurno == false){
                     verificacionLetra = false;
 
