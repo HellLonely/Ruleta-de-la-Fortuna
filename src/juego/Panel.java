@@ -1,8 +1,10 @@
 package juego;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Panel {
+    private static Scanner input = new Scanner(System.in);
     static String panelJugadorAdivinar;
     static String PistaJugador;
     static int aciertosJugador = 0;
@@ -107,5 +109,17 @@ public class Panel {
    public void borrarPanel() {
         listaFrases.remove(generador);
         listaPistas.remove(generador);
+    }
+
+    public static boolean resolverPanel() {
+        System.out.println("Introduce tu intento de resolución");
+        String intentoResolverJugador= input.next();
+        boolean comprobacionIntentoResolucion=frase.equalsIgnoreCase(intentoResolverJugador);
+        if (comprobacionIntentoResolucion=true){
+            System.out.println("Has resuelto el panel,muy bien");
+        }else{
+            System.out.println("No has acertado, lo siento");
+        }
+        return comprobacionIntentoResolucion;
     }
 }

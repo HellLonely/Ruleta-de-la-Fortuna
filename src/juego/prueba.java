@@ -8,7 +8,7 @@ public class prueba {
     
     public static void rellenararray(){
 
-        String frase = "Pablo motos";
+        /*String frase = "Pablo motos";
         char[] chara;
         chara  = frase.toCharArray();
         System.out.println(chara[1]);
@@ -17,6 +17,10 @@ public class prueba {
             String str = Character.toString(chara[i]);
             frase[i] = str;
             
-        }
+        }*/
+
+        String frase = "Pablo motos";
+        
+
     }
 }

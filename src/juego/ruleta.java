@@ -33,7 +33,6 @@ public class ruleta{
                 selector=1;
                 break;
             case 20:
-                System.out.println("Has perdido el turno");
                 selector=2;
                 break;
             case 21:

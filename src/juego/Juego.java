@@ -19,7 +19,7 @@ public class Juego {
         for (int i=0; i<arrayJugadores.length; i++){
             System.out.print("Player "+i+" -> ");
             nome = input.next();
-            arrayJugadores[i] = new jugador(nome, 100); 
+            arrayJugadores[i] = new jugador(nome, 50); 
         }
     }
 
@@ -34,8 +34,11 @@ public class Juego {
         Panel.IniciarPanelJuego();
 
         int money = 0;
+        byte comodines=0;
         while(partidas < 1){
             /*System.out.println("Jugadores: "+arrayJugadores.length); */
+            money = 0;
+
             for(int i = 0; i < arrayJugadores.length; i++){
                 boolean siguienteTurno = false;
                 desings.separador();
@@ -59,30 +62,54 @@ public class Juego {
                     switch (ruletaOutput){
                         case 1:
                         
-                        
+                        comodines+=1;
 
                         break;
                         case 2:
                         
-                        System.out.print("¡Oh no! Has caido en pierde turno");
+                        System.out.println("¿Quieres usar un comodin [s/n]");
+                        String comSelector = input.next();
+                        if (comSelector.equals("n")){
+                            siguienteTurno= true;
+                        } else{
+                            if (comodines>=1){
+                            comodines-=1;
+                            } else {
+                                System.out.println("no tienes suficientes comodines");
+                                siguienteTurno= true;
+                            }
+                        }
                         
                         break;
                         case 3:
                         
+                        money=money/2;
+
                         break;
                         case 4:
+
+                        money=money*2;
                         
                         break;
                         case 5:
 
+                        money=0;
+                        System.out.println("¿Quieres usar un comodin [s/n]");
+                        String comSelector1 = input.next();
+                        if (comSelector1.equals("n")){
+                            siguienteTurno= true;
+                        } else{
+                            if (comodines>=1){
+                            comodines-=1;
+                            } else {
+                                System.out.println("no tienes suficientes comodines");
+                            }
+                        }
+
                         break;
                         default:
                             money = ruletaOutput;
-
-                        break;
-
-                    }
-                    /* Decir letra  */
+                             /* Decir letra  */
 
                     char letraIntroducidaJugador ;
                     System.out.println("Introduce una letra: ");
@@ -134,7 +161,7 @@ public class Juego {
                                 Panel.comprobarLetraJugador(letraIntroducidaJugador);  
                                 verificacionVocal = true;
                                 int dinero = arrayJugadores[i].getDinero();
-                                dinero = dinero-100;
+                                dinero = dinero-50;
                                 arrayJugadores[i].setDinero(dinero);
                             } else{
                                 System.out.println("\nLa letra no puede ser una consonante");
@@ -145,7 +172,9 @@ public class Juego {
                     }else{
                         System.out.println(" ");
                     }
+                        break;
 
+                    }
 
                 }
                
@@ -156,38 +185,3 @@ public class Juego {
         }
     }
 }
-    /*public static void generarPanel(){
-        String frase = Frases.generarFrase();
-        char[] c;
-        c  = frase.toCharArray();
-
-        for (int i = 0; i < c.length;i++) {
-            System.out.print(c[i]);
-        }
-    }
-
-    /*public static void advinarletra(){
-        /*String letra = input.next();*/
-        /*char text = letra.charAt(0);*/
-
-       /*  String frase = Frases.generarFrase();
-        char[] c;
-        c  = frase.toCharArray();
-
-        for (int i = 0; i < c.length;i++) {
-            System.out.print(c[i]);
-        }
-    }*/
-
-   /*  public static void selectorVocal(){
-        System.out.println("Desea comprar una vocal");
-        System.out.println("Si");
-        System.out.println("No");
-        String decidirComprarVocal= input.next();
-        decidirComprarVocal= decidirComprarVocal.toLowerCase();
-        decidirComprarVocal= decidirComprarVocal Strin
-        if (decidirComprarVocal.equals("si")){
-            jugador.comprarVocal(decidirComprarVocal, dineroJugador);
-        }
-    } */ 
-    
