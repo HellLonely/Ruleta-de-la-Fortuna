@@ -28,7 +28,6 @@ public class Juego {
     }
 
 
-
     public static void Turnos(){
         int partidas = 0;
 
@@ -203,8 +202,6 @@ public class Juego {
                         break;
                         default:
                             money = ruletaOutput;
-                             /* Decir letra  */
-
                         break;
 
                     }
