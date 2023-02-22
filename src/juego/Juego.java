@@ -53,7 +53,7 @@ public class Juego {
 
                 System.out.println("Frase -----");
                 Panel.generarArrayListFrase();
-                Panel.mostrarPanel();
+                
                 System.out.println("");
                 
                 boolean verificacionLetra = false;
@@ -123,9 +123,12 @@ public class Juego {
                              /* Decir letra  */
 
                     char letraIntroducidaJugador ;
+                    Panel.mostrarPanel();
+
                     System.out.println("Introduce una letra: ");
 
                     while (verificacionLetra == false) {
+
                         /*"[^aeiou]" */
                         letraIntroducidaJugador = input.next().charAt(0); 
                         if (letraIntroducidaJugador == 'a' || letraIntroducidaJugador == 'e' || letraIntroducidaJugador == 'i' || letraIntroducidaJugador == 'o' || letraIntroducidaJugador == 'u'){

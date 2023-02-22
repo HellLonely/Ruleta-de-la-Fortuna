@@ -13,6 +13,7 @@ public class Panel {
     static ArrayList listaPistas = new ArrayList<String>();
 
     static ArrayList panelMuestraJugador = new ArrayList<Character>();
+    static ArrayList panelOculto = new ArrayList<Character>();
     
     private static String pista;
     private static String frase;
@@ -38,14 +39,21 @@ public class Panel {
 
         int lenghtPanelJugador = panelJugadorAdivinar.length();
 
+        int posicionLetraOcultar = 0;
         
         char[] characterStringConvert;
         characterStringConvert  = panelJugadorAdivinar.toCharArray();
 
         for (int i = 0; i < lenghtPanelJugador; i++){
+
+            posicionLetraOcultar++;
+
             if(characterStringConvert[i] == LetraEnviadaJugador){
                 aciertosJugador++;
                 char characterAcertadoJugador = characterStringConvert[i];
+                
+                /* Pasa la letra a el array oculto */
+                panelOculto.set(posicionLetraOcultar - 1, characterAcertadoJugador);
             }
         }
 
@@ -134,13 +142,22 @@ public class Panel {
 
         for (int i = 0; i < frase.length(); i++){
             panelMuestraJugador.add(characterPanel[i]);
+
+            if (characterPanel[i] == ' '){
+                panelOculto.add(' ');
+            } else{
+                panelOculto.add('*');
+            }
         }
     }
 
 
     public static void mostrarPanel(){
-        for (int i = 0; i < frase.length(); i++){
-            System.out.println(panelMuestraJugador.get(i));
+
+        System.out.println("Panel Oculto");
+        for (int i = 0; i < panelOculto.size();i++) {
+            System.out.print(panelOculto.get(i));
         }
+        System.out.println(" ");
     }
 }
