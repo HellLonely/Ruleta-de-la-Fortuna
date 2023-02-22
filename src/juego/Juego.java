@@ -43,6 +43,7 @@ public class Juego {
             /*System.out.println("Jugadores: "+arrayJugadores.length); */
             money = 0;
 
+
             for(int i = 0; i < arrayJugadores.length; i++){
 
                 boolean siguienteTurno = false;
@@ -51,7 +52,6 @@ public class Juego {
 
                 System.out.println("Turno de: "+arrayJugadores[i].getNombre());
 
-                System.out.println("Frase -----");
                 Panel.generarArrayListFrase();
                 
                 System.out.println("");
@@ -69,6 +69,89 @@ public class Juego {
                     
 
                     ruletaOutput = ruleta.giro();
+
+                    /* Tarea para clase
+                     * 1. Crear un menu para cada opcion. (Facil)
+                     * 2. Pulir los diseños de la interfaz. (Muy Facil, Opcional)
+                    */
+
+
+                    System.out.println(" (1) Probar una letra.\n (2) Resolver el panel.\n (3) Comprar una vocal");
+                    int opcionMenuJugador = input.nextInt() ;
+                    char letraIntroducidaJugador ;
+
+                    Panel.mostrarPanel();
+
+                    switch (opcionMenuJugador){
+                        case 1:
+
+                            System.out.println("Introduce una letra: ");
+
+                            while (verificacionLetra == false) {
+
+                                /*"[^aeiou]" */
+                                letraIntroducidaJugador = input.next().charAt(0); 
+                                if (letraIntroducidaJugador == 'a' || letraIntroducidaJugador == 'e' || letraIntroducidaJugador == 'i' || letraIntroducidaJugador == 'o' || letraIntroducidaJugador == 'u'){
+                                    System.out.println("\nLa letra no puede ser una vocal");
+                                } else{
+
+                                    Panel.comprobarLetraJugador(letraIntroducidaJugador); 
+                                    int numeroAciertosJugador = Panel.extraerNumeroAciertos();
+                                    
+                                    if (numeroAciertosJugador==0){
+                                        siguienteTurno= true;
+                                    }
+
+                                    for(int j = 0; j<numeroAciertosJugador; j++){
+                                        
+                                        arrayJugadores[i].añadirDinero(money);
+                                        
+                                    }
+                                    Panel.resetCacheAciertos();
+
+                                    verificacionLetra = true;
+
+                                    System.out.println("\nTotal de dinero: "+arrayJugadores[i].getDinero());
+                                }
+                            }
+                        break;
+
+                        case 2:
+
+                        break;
+
+                        case 3:
+
+                            System.out.println("\nQuieres comprar una vocal? Si/No");
+                            String elecciónJugador = input.next();
+
+                            boolean verificacionVocal=false;
+
+                            if (elecciónJugador.equals("Si")){
+
+                                System.out.println("\nIntroduce una vocal");
+                                /*metodo vocal */
+                                while (verificacionVocal == false) {
+                                    /*"[^aeiou]" */
+                                    letraIntroducidaJugador = input.next().charAt(0); 
+                                    if (letraIntroducidaJugador == 'a' || letraIntroducidaJugador == 'e' || letraIntroducidaJugador == 'i' || letraIntroducidaJugador == 'o' || letraIntroducidaJugador == 'u'){
+                                        
+                                        Panel.comprobarLetraJugador(letraIntroducidaJugador);  
+                                        verificacionVocal = true;
+                                        int dinero = arrayJugadores[i].getDinero();
+                                        dinero = dinero-50;
+                                        arrayJugadores[i].setDinero(dinero);
+                                    } else{
+                                        System.out.println("\nLa letra no puede ser una consonante");
+                                    }
+                            }
+
+                            System.out.println("\nTotal de dinero: "+arrayJugadores[i].getDinero());
+                            }else{
+                                System.out.println(" ");
+                            }
+
+                    }
 
                     switch (ruletaOutput){
                         case 1:
@@ -122,70 +205,6 @@ public class Juego {
                             money = ruletaOutput;
                              /* Decir letra  */
 
-                    char letraIntroducidaJugador ;
-                    Panel.mostrarPanel();
-
-                    System.out.println("Introduce una letra: ");
-
-                    while (verificacionLetra == false) {
-
-                        /*"[^aeiou]" */
-                        letraIntroducidaJugador = input.next().charAt(0); 
-                        if (letraIntroducidaJugador == 'a' || letraIntroducidaJugador == 'e' || letraIntroducidaJugador == 'i' || letraIntroducidaJugador == 'o' || letraIntroducidaJugador == 'u'){
-                            System.out.println("\nLa letra no puede ser una vocal");
-                        } else{
-
-                            Panel.comprobarLetraJugador(letraIntroducidaJugador); 
-                            int numeroAciertosJugador = Panel.extraerNumeroAciertos();
-                            
-                            if (numeroAciertosJugador==0){
-                                siguienteTurno= true;
-                            }
-
-                            for(int j = 0; j<numeroAciertosJugador; j++){
-                                
-                                arrayJugadores[i].añadirDinero(money);
-                                
-                            }
-                            Panel.resetCacheAciertos();
-
-                            verificacionLetra = true;
-
-                            System.out.println("\nTotal de dinero: "+arrayJugadores[i].getDinero());
-                        }
-                   }
-
-
-                    /* Comprar vocal (opcional) */
-
-                    System.out.println("\nQuieres comprar una vocal? Si/No");
-                    String elecciónJugador = input.next();
-
-                    boolean verificacionVocal=false;
-
-                    if (elecciónJugador.equals("Si")){
-
-                        System.out.println("\nIntroduce una vocal");
-                        /*metodo vocal */
-                        while (verificacionVocal == false) {
-                            /*"[^aeiou]" */
-                            letraIntroducidaJugador = input.next().charAt(0); 
-                            if (letraIntroducidaJugador == 'a' || letraIntroducidaJugador == 'e' || letraIntroducidaJugador == 'i' || letraIntroducidaJugador == 'o' || letraIntroducidaJugador == 'u'){
-                                
-                                Panel.comprobarLetraJugador(letraIntroducidaJugador);  
-                                verificacionVocal = true;
-                                int dinero = arrayJugadores[i].getDinero();
-                                dinero = dinero-50;
-                                arrayJugadores[i].setDinero(dinero);
-                            } else{
-                                System.out.println("\nLa letra no puede ser una consonante");
-                            }
-                       }
-
-                       System.out.println("\nTotal de dinero: "+arrayJugadores[i].getDinero());
-                    }else{
-                        System.out.println(" ");
-                    }
                         break;
 
                     }

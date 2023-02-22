@@ -154,10 +154,10 @@ public class Panel {
 
     public static void mostrarPanel(){
 
-        System.out.println("Panel Oculto");
+        System.out.println("\n Panel Oculto \n");
         for (int i = 0; i < panelOculto.size();i++) {
             System.out.print(panelOculto.get(i));
         }
-        System.out.println(" ");
+        System.out.println("\n");
     }
 }
