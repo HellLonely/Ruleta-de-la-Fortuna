@@ -47,8 +47,6 @@ public class Juego {
             /*System.out.println("Jugadores: "+arrayJugadores.length); */
 
             System.out.println("\n Nuevo panel\n");
-            
-
 
             for(int i = 0; i < arrayJugadores.length; i++){
 
@@ -83,7 +81,7 @@ public class Juego {
                     */
 
 
-                    System.out.println(" (1) Probar una letra.\n (2) Resolver el panel.\n (3) Comprar una vocal");
+                    System.out.println(" (1) Probar una letra.\n (2) Resolver el panel.\n (3) Comprar una vocal\n");
                     int opcionMenuJugador = input.nextInt() ;
                     char letraIntroducidaJugador ;
 
@@ -126,7 +124,7 @@ public class Juego {
                             if (caso==true){
                                 partidas = partidas +5;
 
-                                
+
                             }else{
                                 System.out.println("¿Quieres usar un comodin [s/n]");
                         String comSelector = input.next();
