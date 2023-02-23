@@ -15,30 +15,6 @@ public class jugador{
         byte numComodines = 0;
     }
 
-    public static void comprarVocal(String letra, int dineroJugador){
-        Scanner input = new Scanner(System.in);
-        desings.comprarVocales();
-        letra=input.next("[a|e|i|o|u]");
-        if(dineroJugador>=100){
-        dineroJugador=dineroJugador-100;
-        }else{
-            System.out.println("No tienes dinero suficiente para comprar");
-        }
-
-    }
-
-
-
-    public static void usarComodin(byte numComodines){
-        if (numComodines>1){
-            System.out.println("Has usado un comodin");
-            numComodines=(byte)(numComodines-1);
-        } else {
-            System.out.println("No tienes comodines para usar");
-        }
-    }
-
-
     public void añadirDinero(int money){
         this.dineroJugador = dineroJugador + money;
     }

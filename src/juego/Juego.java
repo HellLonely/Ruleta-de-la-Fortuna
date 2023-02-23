@@ -31,6 +31,8 @@ public class Juego {
     public static void Turnos(){
         int partidas = 0;
 
+        
+
         /* System.out.println(Frases.generarFrase());*/
 
 
@@ -38,9 +40,14 @@ public class Juego {
 
         int money = 0;
         byte comodines=0;
+        money = 0;
+
+        Panel.generarArrayListFrase();
         while(partidas < 1){
             /*System.out.println("Jugadores: "+arrayJugadores.length); */
-            money = 0;
+
+            System.out.println("\n Nuevo panel\n");
+            
 
 
             for(int i = 0; i < arrayJugadores.length; i++){
@@ -51,11 +58,12 @@ public class Juego {
 
                 System.out.println("Turno de: "+arrayJugadores[i].getNombre());
 
-                Panel.generarArrayListFrase();
+                
                 
                 System.out.println("");
                 
                 boolean verificacionLetra = false;
+                siguienteTurno = false;
                 
                 while(siguienteTurno == false){
                     verificacionLetra = false;
@@ -109,14 +117,30 @@ public class Juego {
                                     Panel.resetCacheAciertos();
 
                                     verificacionLetra = true;
-
-                                    System.out.println("\nTotal de dinero: "+arrayJugadores[i].getDinero());
                                 }
                             }
                         break;
 
                         case 2:
+                            boolean caso= Panel.resolverPanel();
+                            if (caso==true){
+                                partidas = partidas +5;
 
+                                
+                            }else{
+                                System.out.println("¿Quieres usar un comodin [s/n]");
+                        String comSelector = input.next();
+                        if (comSelector.equals("n")){
+                            siguienteTurno= true;
+                        } else{
+                            if (comodines>=1){
+                            comodines-=1;
+                            } else {
+                                System.out.println("no tienes suficientes comodines");
+                                siguienteTurno= true;
+                            }
+                        }
+                            }
                         break;
 
                         case 3:
@@ -140,17 +164,19 @@ public class Juego {
                                         int dinero = arrayJugadores[i].getDinero();
                                         dinero = dinero-50;
                                         arrayJugadores[i].setDinero(dinero);
-                                    } else{
+                                    }else{
                                         System.out.println("\nLa letra no puede ser una consonante");
                                     }
                             }
 
-                            System.out.println("\nTotal de dinero: "+arrayJugadores[i].getDinero());
+                            
                             }else{
                                 System.out.println(" ");
                             }
 
                     }
+
+                    System.out.println("\nTotal de dinero: "+arrayJugadores[i].getDinero());
 
                     switch (ruletaOutput){
                         case 1:
@@ -208,10 +234,8 @@ public class Juego {
 
                 }
                
-                
             }
             System.out.println("    ");
-            partidas++;
         }
     }
 }

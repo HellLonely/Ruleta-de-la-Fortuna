@@ -81,19 +81,19 @@ public class Panel {
     public static void insertArrayListFrase(){
         listaFrases.add("Bocadillo de tortilla");
         listaFrases.add("Jamon asado con patatas");
-        listaFrases.add("Clara de limón");
-        listaFrases.add("Sushi, onigiri y udon");
+        listaFrases.add("Clara de limon");
+        listaFrases.add("Mario Bros");
         listaFrases.add("Pablo Motos");
         listaFrases.add("Si tu me dices ven");
         listaFrases.add("Abel Ramon Caballero Alvarez");
-        listaFrases.add("Teclado y ratón");
+        listaFrases.add("Teclado y raton");
     }
 
     public static void insertArrayListPista(){
         listaPistas.add("Pincho de bar");
         listaPistas.add("Plato asado"); /*No fallo*/
         listaPistas.add("Bebida fría");
-        listaPistas.add("3 asiáticos");
+        listaPistas.add("Juego de un fontanero muy famoso");
         listaPistas.add("Presentador español");
         listaPistas.add("Éxito del cigala");
         listaPistas.add("Skater, B-Boy, bmxer, fresstyler y fanático de las led");
@@ -125,14 +125,31 @@ public class Panel {
     }
 
     public static boolean resolverPanel() {
-        System.out.println("Introduce tu intento de resolución");
-        String intentoResolverJugador= input.next();
-        boolean comprobacionIntentoResolucion=frase.equalsIgnoreCase(intentoResolverJugador);
-        if (comprobacionIntentoResolucion=true){
+        System.out.println("Introduce tu intento de resolución: ");
+        String intentoResolverJugador = input.nextLine();
+        boolean comprobacionIntentoResolucion;
+        
+        /*if (intentoResolverJugador == frase){
+            comprobacionIntentoResolucion = true;
+        }else{
+            comprobacionIntentoResolucion = false;
+        }
+
+        if (comprobacionIntentoResolucion){
             System.out.println("Has resuelto el panel,muy bien");
         }else{
             System.out.println("No has acertado, lo siento");
+        }*/
+
+
+        if(intentoResolverJugador.equals(frase)){
+            comprobacionIntentoResolucion = true;
+            System.out.println("Has resuelto el panel,muy bien");
+        }else{
+            System.out.println("No has acertado, lo siento");
+            comprobacionIntentoResolucion = false;
         }
+
         return comprobacionIntentoResolucion;
     }
 
