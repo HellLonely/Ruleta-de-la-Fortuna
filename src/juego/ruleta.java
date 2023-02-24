@@ -33,6 +33,7 @@ public class ruleta{
                 selector=1;
                 break;
             case 20:
+                System.out.println("Has girado la ruleta y has perdido tu turno");
                 selector=2;
                 break;
             case 21:
@@ -50,12 +51,6 @@ public class ruleta{
             default:
                 throw new AssertionError();
         }
-        /*
-        * El selector 0 indica el dinero, es decir 100, 50,200 o 150
-        * 
-        * El selector 1 indica casillas especiales: 
-        1="Comodín", 2="P. turno", 3="1/2", 4="x2", 5="Quiebra"
-        */
 
         return selector;
 

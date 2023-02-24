@@ -9,6 +9,11 @@ public class hub {
         Scanner input = new Scanner(System.in);
         
         Juego.Comenzar();
-        Juego.Turnos();
+        for (int i = 0; i <4 ; i++){
+            Juego.Turnos();
+
+            System.out.println("Este panel a finalizado\n Comienza otra partida \n\n\n");
+        }
+        
     }
 }

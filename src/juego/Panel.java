@@ -57,7 +57,7 @@ public class Panel {
             }
         }
 
-        System.out.println("\nEn el panel hay "+ aciertosJugador + " letras");
+        System.out.println("\nHas acertado "+ aciertosJugador + " letras");
         /*String[][] panelParaMostrar= new String [lenghtPanelJugador][2];*/
     }
 
@@ -116,10 +116,11 @@ public class Panel {
     public static String generarPista(){
         insertArrayListPista();
         String PistaJugador = (String) listaPistas.get(generador);
+        borrarPanel();
         return PistaJugador;
     }
     
-   public void borrarPanel() {
+   public static void borrarPanel() {
         listaFrases.remove(generador);
         listaPistas.remove(generador);
     }
@@ -128,19 +129,6 @@ public class Panel {
         System.out.println("Introduce tu intento de resolución: ");
         String intentoResolverJugador = input.nextLine();
         boolean comprobacionIntentoResolucion;
-        
-        /*if (intentoResolverJugador == frase){
-            comprobacionIntentoResolucion = true;
-        }else{
-            comprobacionIntentoResolucion = false;
-        }
-
-        if (comprobacionIntentoResolucion){
-            System.out.println("Has resuelto el panel,muy bien");
-        }else{
-            System.out.println("No has acertado, lo siento");
-        }*/
-
 
         if(intentoResolverJugador.equals(frase)){
             comprobacionIntentoResolucion = true;
@@ -176,5 +164,9 @@ public class Panel {
             System.out.print(panelOculto.get(i));
         }
         System.out.println("\n");
+    }
+
+    public static void borrarPanelOculto(){
+        panelOculto.clear();
     }
 }
