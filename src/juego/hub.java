@@ -12,7 +12,7 @@ public class hub {
         for (int i = 0; i <4 ; i++){
             Juego.Turnos();
 
-            System.out.println("Este panel a finalizado\n Comienza otra partida \n\n\n");
+            System.out.println("Este panel a finalizado\n Comienza otra partida \n");
         }
         
     }
